@@ -10,6 +10,7 @@ demo.state1.prototype = {
         game.load.image('UnderWorld','assets/tilemaps/UnderWorld.png')
         //Sprite de DinoRed
         game.load.image('DinoRed','assets/sprites/DinoSpriteRed.png')
+        game.load.image('DinoEvil','assets/sprites/DinoSpriteEvil.png')
     },
     create: function(){
         game.physics.startSystem(Phaser.Physics.ARCADE); //Añadir fisicas al state
@@ -27,6 +28,9 @@ demo.state1.prototype = {
         var sillas = map.createLayer('sillas');
         
         map.setCollisionBetween(148,221, true, 'wall');
+        //Malo maloso
+        DinoEvil = game.add.sprite(600,200,'DinoEvil')
+        DinoEvil.scale.setTo(0.8,0.8);
         
         DinoRed = game.add.sprite(200,200,'DinoRed');
         DinoRed.scale.setTo(0.4,0.4);
